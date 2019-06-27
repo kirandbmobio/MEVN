@@ -1,0 +1,15 @@
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<p>Hello my name is {{ userData.fname }}</p>
+{{#checkTrue userData.fname}}
+    <p>{{userData.lname}}</p>
+    {{else}}
+    <h1>{{userData.email}}</h1>
+{{/checkTrue}}
+{{!-- {{#if data.isDisplayAge }}
+    <p>My age is {{ data.age }}</p>
+    {{else}}
+    <p>No Age Found!!!</p>
+{{/if}} --}}
