@@ -18,7 +18,7 @@
 </template>
 
 <script>
-
+import URL from '../../../config/dev.env'
 export default {
     name:'profile',
   data() {
@@ -28,7 +28,7 @@ export default {
   },
   created(){
        let adminId = this.$session.get('adminId')
-       this.$http.get(`http://localhost:8000/user/`+adminId)
+       this.$http.get(URL.API_URL+`user/`+adminId)
        .then(response=>{
            this.user = response.data.userData
        })

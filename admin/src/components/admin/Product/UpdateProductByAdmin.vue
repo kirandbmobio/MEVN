@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import URL from '../../../../config/dev.env';
 export default {
     name:'update-product',
     data(){
@@ -27,7 +28,7 @@ export default {
     },
     methods:{
         updateProduct(id){
-            this.$http.put(`http://localhost:8000/product/updateProduct/${id}`,this.product)
+            this.$http.put(URL.API_URL+`product/updateProduct/${id}`,this.product)
             .then(response=>{
                 this.$router.push({
                     name:'product-detail',
@@ -38,7 +39,7 @@ export default {
     },
     created(){
         let productId = this.$route.params.productId;
-        this.$http.get(`http://localhost:8000/product/getProduct/${productId}`)
+        this.$http.get(URL.API_URL+`product/getProduct/${productId}`)
         .then(response=>{
             this.product = response.data.product
         })

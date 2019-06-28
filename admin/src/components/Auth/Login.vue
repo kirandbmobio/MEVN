@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import URL from '../../../config/dev.env';
 export default {
     name:'login',
 
@@ -40,7 +41,7 @@ export default {
         email: this.email,
         password: this.password
       };
-      this.$http.post("http://localhost:8000/user/login", data).then(response => {
+      this.$http.post(URL.API_URL+"user/login", data).then(response => {
           if(response.data.message == 'user not registerd'){
               this.message = response.data.message;
           }else{

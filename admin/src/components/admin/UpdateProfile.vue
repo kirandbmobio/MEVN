@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import URL from '../../../config/dev.env'
 export default {
     name:'update-profile',
 
@@ -29,7 +30,7 @@ export default {
   created(){
       let userId = this.$route.params.userId;
       console.log(userId);
-     this.$http.get('http://localhost:8000/user/'+ userId)
+     this.$http.get(URL.API_URL+'user/'+ userId)
      .then(response=>{
          this.user = response.data.userData
      })
@@ -40,7 +41,7 @@ export default {
 
   methods: {
       updateProfile(){
-          this.$http.put('http://localhost:8000/user/update/'+ this.user._id , this.user)
+          this.$http.put(URL.API_URL+'user/update/'+ this.user._id , this.user)
           .then(response=>{
               console.log(response);
               if(this.user.role == 'admin'){

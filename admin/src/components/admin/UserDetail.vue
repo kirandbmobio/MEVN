@@ -25,6 +25,7 @@
     </div>
 </template>
 <script>
+import URL from '../../../config/dev.env'
 export default {
     name:'user-detail',
     data(){
@@ -34,15 +35,16 @@ export default {
     },
     methods:{
         deleteUser(id) {
-      this.user = this.user.filter(result => result._id !== id);
+      this.user = this.user.filter(result => result.user._id !== id);
+      
       this.$http
-        .delete(`http://localhost:8000/user/deleteUser/${id}`)
+        .delete(URL.API_URL+`user/deleteUser/${id}`)
         .then()
         .catch(err => console.log(err));
     }
     },
     created(){
-        this.$http.get('http://localhost:8000/user/all/user')
+        this.$http.get(URL.API_URL+'user/all/user')
         .then(response=>{
             this.user = response.data.allUserArray
         })

@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import URL from '../../../../config/dev.env';
 export default {
     name:'add-product',
     data(){
@@ -34,7 +35,7 @@ export default {
                 quantity:this.quantity,
                 price:this.price
             }
-            this.$http.post('http://localhost:8000/product/create',data)
+            this.$http.post(URL.API_URL+'product/create',data)
             .then(response=>{
                 this.$router.push({
                     name:'product-detail',

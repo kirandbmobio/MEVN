@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import URL from '../../../../config/dev.env';
 export default {
     name:'product-detail',
     data(){
@@ -41,7 +42,7 @@ export default {
     },
    created(){
        let userId = this.$route.params.userId;
-        this.$http.get(`http://localhost:8000/product/${userId}`)
+        this.$http.get(URL.API_URL+`product/${userId}`)
         .then(response=>{
             this.products = response.data.products
         })
@@ -53,7 +54,7 @@ export default {
         deleteProduct(id){
             this.products = this.products.filter(result => result._id !== id);
       this.$http
-        .delete(`http://localhost:8000/product/deleteProduct/${id}`)
+        .delete(URL.API_URL+`product/deleteProduct/${id}`)
         .then()
         .catch(err => console.log(err));
     }

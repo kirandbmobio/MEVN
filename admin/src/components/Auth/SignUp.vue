@@ -33,7 +33,7 @@
 </template>
 
 <script>
-
+import URL from '../../../config/dev.env'
 export default {
   data() {
     return {
@@ -53,7 +53,7 @@ export default {
         password: this.password,
         role:this.role
       };
-      this.$http.post("http://localhost:8000/register", data).then(response => {
+      this.$http.post(URL.API_URL+"register", data).then(response => {
         if (response.data.message == "user already exist") {
           this.$router.push({
               name: 'login',

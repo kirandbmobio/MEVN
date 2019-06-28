@@ -20,7 +20,7 @@ import UpdateProductByAdmin from './components/admin/Product/UpdateProductByAdmi
 export const routes = [{
         path: '/',
         component: Login,
-        name: 'login'
+        name: 'login',
     },
     {
         path: '/sign-up',
@@ -125,5 +125,9 @@ export const routes = [{
         name: 'edit',
         path: '/edit/:id',
         component: EditPost
+    },
+    {
+        path: '*',
+        redirect: '/'
     }
 ]

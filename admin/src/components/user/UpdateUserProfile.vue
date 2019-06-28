@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import URL from '../../../config/dev.env';
 export default {
     name:'update-user-profile',
 
@@ -28,7 +29,7 @@ export default {
   },
   created(){
       let userId = this.$session.get('userId');
-     this.$http.get(`http://localhost:8000/user/${userId}`)
+     this.$http.get(URL.API_URL+`user/${userId}`)
      .then(response=>{
          this.user = response.data.userData
      })
@@ -39,7 +40,7 @@ export default {
 
   methods: {
       updateProfile(id){
-          this.$http.put(`http://localhost:8000/user/update/${id}` , this.user)
+          this.$http.put(URL.API_URL+`user/update/${id}` , this.user)
           .then(response=>{
             this.$router.push({
                 name: "user-profile"
