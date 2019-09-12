@@ -1,2 +1,5 @@
 # MEVN
-Crud using mongodb , expressjs , vuejs and nodejs
+
+For Run Vuejs(admin)
+
+npm run dev
