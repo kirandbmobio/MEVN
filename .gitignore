@@ -1,1 +1,4 @@
-/node_module
+node_module
+admin/node_module
+server/node_module
+
