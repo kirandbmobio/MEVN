@@ -1,4 +1,5 @@
-node_module
-admin/node_module
-server/node_module
+node_modules
+admin/node_modules
+server/node_modules
+package-lock.json
 
