@@ -1,0 +1,17 @@
+<div>
+    <h1 style="text-align: center">Register</h1>
+    {{#if data.result}}
+        <h2>Data Already exist</h2>
+        {{else}}
+        <h2>Data Created Successfully</h2>
+    {{/if}}
+<form action="/register" method="POST">
+    <label>Firstname</label>
+    <input type="text" name="fname"><br/>
+    <label>Lastname</label>
+    <input type="text" name="lname"><br/>
+    <label>Email</label><input type="email" name="email"><br/>
+    <label>Profle Picture</label><input type="file" name="profile"/>
+    <input type="submit" value="submit"/>
+</form>
+</dvi>
