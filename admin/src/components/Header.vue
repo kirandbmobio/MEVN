@@ -5,6 +5,7 @@
     <!-- Admin Header -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
+          <router-link :to="{name:'home'}" active-class="active" tag="li" class="nav-link"><a>Dashboard</a></router-link>
           <router-link tag="li" :to="{name:'profile' , params:{userId : this.$route.params.userId}}" active-class="active" class="nav-link"><a>Profile</a></router-link>
           <router-link tag="li" :to="{name:'user-detail' ,params:{userId : this.$route.params.userId}}" active-class="active" class="nav-link"><a>Users</a></router-link>
            <li class="nav-link"><a @click.prevent="logout">Logout</a></li>
@@ -45,10 +46,7 @@ export default {
          this.$router.push({ name: 'login'})
          location.reload()
       }
-  },
-  mounted() {
-      console.log(typeof this.isAdmin)
-  },
+  }
   
 };
 </script>

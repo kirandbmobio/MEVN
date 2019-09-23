@@ -4,7 +4,6 @@ import Posts from './components/Todo/Posts.vue';
 import Login from './components/Auth/Login.vue';
 import SignUp from './components/Auth/SignUp.vue';
 import Profile from './components/Admin/Profile.vue';
-import UserHome from './components/User/UserHome.vue';
 import EditPost from './components/Todo/EditPost.vue';
 import CreatePost from './components/Todo/CreatePost.vue';
 import UserDetail from './components/Admin/UserDetail.vue';
@@ -33,8 +32,8 @@ export const routes = [{
     //User Routes
     {
         path: '/',
-        component: UserHome,
-        name: 'user-home',
+        component: Home,
+        name: 'home',
         children: [{
                 path: '/user-profile',
                 component: UserProfile,

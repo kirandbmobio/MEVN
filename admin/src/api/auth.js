@@ -22,7 +22,6 @@ export default {
     profile() {
       return axios.get('/user/profile')
        .then(response => {
-           console.log(response)
            return response.data;
        })
     },

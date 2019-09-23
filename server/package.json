@@ -18,6 +18,7 @@
     "express-session": "^1.16.1",
     "flash": "^1.1.0",
     "jsonwebtoken": "^8.5.1",
+    "jw-paginate": "^1.0.4",
     "mongoose": "^5.5.4"
   }
 }

@@ -32,7 +32,6 @@ export default {
     },
     //update product
     updateProduct(id, data) {
-        console.log('data', data)
         return axios.put('/product/updateProduct/' + id, data)
             .then(response => {
                 return response.data

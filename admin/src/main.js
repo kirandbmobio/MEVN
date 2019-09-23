@@ -13,8 +13,10 @@ import Axios from 'axios';
 import store from './store/store';
 import URL from '../config/dev.env';
 import toast from '../src/plugins/toast';
+import DataTableFactory from 'vuejs-datatable'
 
 //set packages globally
+Vue.use(DataTableFactory)
 Vue.use(toast);
 Vue.use(Buefy, {
     defaultIconPack: 'fa'

@@ -29,7 +29,6 @@ export const productMixin = {
         updateProduct(id) {
             api.updateProduct(id, this.$store.getters.singleProductData)
                 .then(response => {
-                    console.log(response)
                     //direction to display product page
                     this.$router.push({
                         name: 'display-product'

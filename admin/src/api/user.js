@@ -6,7 +6,6 @@ export default {
     getUser() {
         return axios.get('/user/profile')
             .then(response => {
-                console.log('respomnse', response)
                 return response.data;
             })
     },
@@ -19,7 +18,7 @@ export default {
     },
     //get all user
     getAllUser() {
-        return axios.get('/user/all/user')
+        return axios.get('/user/items')
             .then(response => {
                 return response.data
             })

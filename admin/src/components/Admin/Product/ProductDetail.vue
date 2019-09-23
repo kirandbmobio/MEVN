@@ -4,7 +4,7 @@
             <h1>Product List</h1>
         </div>
         <!-- User Details -->
-        <div class="col-md-6">
+        <div class="col-md-6" v-if="products.length">
                 <label class="label">Name: {{products[0].user_id.fname}} {{products[0].user_id.lname}}</label>
                 <label class="label">Email : {{products[0].user_id.email}}</label>
         </div>
@@ -46,7 +46,7 @@ export default {
     //data set
     data(){
         return{
-            user:{}
+            user: {}
         }
     },
     computed: {
@@ -55,7 +55,7 @@ export default {
        })
     },
     //create at the time component call
-   mounted (){
+    mounted () {
        //set user id from parameters
        let userId = this.$route.params.userId;
        //get user's all products
@@ -69,7 +69,7 @@ export default {
         //delete the product
         api.deleteProduct(id)
         .then(reponse => {
-            console.log(response)
+            
         })
         .catch(err => console.log(err));
     }
